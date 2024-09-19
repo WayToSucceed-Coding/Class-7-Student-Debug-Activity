@@ -54,15 +54,6 @@ def check_win(player):
         return True
     return False
 
-# Function to restart the game
-def restart():
-    #change1
-    global board, player
-    board = np.zeros((3, 3))
-    player = 1
-    screen.fill(WHITE)
-    draw_lines()
-
 # Main game loop
 screen.fill(WHITE)
 
@@ -83,7 +74,6 @@ while running:
                 board[clicked_row][clicked_col] = player
                 if check_win(player):
                     print(f"Player {player} wins!")
-                    restart()
                 player = 3 - player
 
             
